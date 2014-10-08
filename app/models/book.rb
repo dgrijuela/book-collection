@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :user
 
-  # Paperclip gem methods for the cover image
+  # Paperclip gem methods for the cover image upload
   has_attached_file :cover,
                     styles: {
                       grid: '200x150' # Image size to use in grids (e.g. home page)
