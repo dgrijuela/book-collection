@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.13', platform: :ruby
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,8 +33,24 @@ gem 'spring',        group: :development
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Thinking Sphinx for searching
+gem 'thinking-sphinx', '~> 3.1.1'
+
+# Devise for user authentication
+gem 'devise'
+
+# Kaminari for pagination
+gem 'kaminari'
+
+# Paperclip for managing file uploads
+gem 'paperclip', '~> 4.2'
+
+group :development, :test do
+  # RSpec for testing
+  gem 'rspec-rails', '~> 3.0.0'
+end
