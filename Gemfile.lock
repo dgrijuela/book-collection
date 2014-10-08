@@ -182,10 +182,10 @@ PLATFORMS
 DEPENDENCIES
   capistrano-rails
   coffee-rails (~> 4.0.0)
-  devise
+  devise (~> 3.4)
   jbuilder (~> 2.0)
   jquery-rails
-  kaminari
+  kaminari (~> 0.16)
   mysql2 (~> 0.3.13)
   paperclip (~> 4.2)
   rails (= 4.1.6)
