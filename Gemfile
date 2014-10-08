@@ -42,10 +42,10 @@ gem 'capistrano-rails', group: :development
 gem 'thinking-sphinx', '~> 3.1.1'
 
 # Devise for user authentication
-gem 'devise'
+gem 'devise', '~> 3.4'
 
 # Kaminari for pagination
-gem 'kaminari'
+gem 'kaminari', '~> 0.16'
 
 # Paperclip for managing file uploads
 gem 'paperclip', '~> 4.2'
