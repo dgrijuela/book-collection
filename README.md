@@ -24,9 +24,5 @@ Software dependencies
 * [Image Magick] - A server-side image processing library required for the
                   [Paperclip] gem to make modify images' attributes.
 
-You can also see other people's books and download them.
-
-There is aIf you don't find any book, you can use its search engine.
-
 [Image Magick]:http://www.imagemagick.org/
 [Paperclip]:https://github.com/thoughtbot/paperclip
