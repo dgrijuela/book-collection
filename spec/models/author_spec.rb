@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Author, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Author do
+  it "is invalid with a duplicated author's name"
+  it 'is invalid without a name'
+  it 'has to have the name titleized'
 end

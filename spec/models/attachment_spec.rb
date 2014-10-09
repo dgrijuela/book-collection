@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Attachment, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Attachment do
+  it 'is valid with a file and a book_id'
+  it 'is invalid without a file'
+  it 'is invalid without a book_id'
+  it 'is invalid with a file_content_type different than [pdf, mobi, epub, zip]'
 end
