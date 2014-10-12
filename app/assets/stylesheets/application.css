@@ -201,7 +201,7 @@ figcaption {
 	padding-right: 15px;
 	display: block;
 	overflow: hidden;
-	max-height: 125px;
+	/*max-height: 125px;*/
 	margin-top: 10px;
 	text-decoration: none;
 	color: #444;
@@ -592,7 +592,7 @@ aside .tags li{
 
 @media all and (max-width:880px) {
 	.show-text {
-		max-height: 100px;
+		/*max-height: 100px;*/
 	}
 }
 
