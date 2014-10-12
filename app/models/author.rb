@@ -1,5 +1,10 @@
 class Author < ActiveRecord::Base
-  has_many :book_author_relations
+  before_save :titleize_name
 
-  validates_presence_of :name
+  has_many :book_author_relations
+  validates :name, presence: true
+
+  def titleize_name
+    self.name = self.name.titleize
+  end
 end

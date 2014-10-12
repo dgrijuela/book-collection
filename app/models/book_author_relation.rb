@@ -4,4 +4,6 @@ class BookAuthorRelation < ActiveRecord::Base
 
   validates_presence_of :book_id
   validates_presence_of :author_id
+
+  validates_uniqueness_of :author_id, scope: :book_id
 end

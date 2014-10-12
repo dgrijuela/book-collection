@@ -10,4 +10,8 @@ describe BookAuthorRelation do
   it 'is invalid without an author_id' do
     expect(FactoryGirl.build(:book_author_relation, author_id: nil)).to be_invalid
   end
+  it 'is invalid two equal relations' do
+    BookAuthorRelation.create(book_id: 3, author_id: 4)
+    expect(BookAuthorRelation.new(book_id: 3, author_id: 4)).to be_invalid
+  end
 end
