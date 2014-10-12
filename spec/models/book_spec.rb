@@ -6,7 +6,11 @@ describe Book do
                      user_id: 6,
                      cover_file_name: "thetestcover.png",
                      cover_content_type: "image/png",
-                     cover_file_size: 1024)
+                     cover_file_size: 1024,
+                     authors_attributes: [name: "john"],
+                     attachments_attributes: [file_file_name: "thetestattachment.pdf",
+                                              file_content_type: "application/pdf",
+                                              file_file_size: 1024])
   end
 
   it 'is valid with a title, a cover, and an user_id' do
@@ -30,15 +34,10 @@ describe Book do
   end
   it "should be able to create authors" do
     @book.save
-    @book.authors.create(name: "john")
-    @book.authors.create(name: "peter")
-    expect(@book.authors.pluck(:name)).to eq(["John", "Peter"])
+    expect(@book.authors.pluck(:name)).to eq(["John"])
   end
   it "should be able to create attachments" do
     @book.save
-    @book.attachments.create(file_file_name: "testattachment.pdf",
-                             file_content_type: "application/pdf",
-                             file_file_size: 1024)
-    expect(@book.attachments.pluck(:file_file_name)).to eq(["testattachment.pdf"])
+    expect(@book.attachments.pluck(:file_file_name)).to eq(["thetestattachment.pdf"])
   end
 end
