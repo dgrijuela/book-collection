@@ -1,6 +1,8 @@
 class Book < ActiveRecord::Base
   belongs_to :user
 
+  paginates_per 3
+
   # Paperclip gem methods for the cover image upload
   has_attached_file :cover,
                     styles: {

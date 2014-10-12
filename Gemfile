@@ -51,7 +51,7 @@ gem 'kaminari', '~> 0.16'
 gem 'paperclip', '~> 4.2'
 
 # Cocoon for adding nested forms dinamically
-gem 'cocoon'
+gem 'cocoon', '~> 1.2.6'
 
 group :development, :test do
   # RSpec for testing

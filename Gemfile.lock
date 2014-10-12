@@ -182,7 +182,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano-rails
-  cocoon
+  cocoon (~> 1.2.6)
   coffee-rails (~> 4.0.0)
   devise (~> 3.4)
   jbuilder (~> 2.0)

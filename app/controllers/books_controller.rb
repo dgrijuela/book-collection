@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @books = Book.order("created_at DESC")
+    @books = Book.order("created_at DESC").page params[:page]
     respond_with(@books)
   end
 
