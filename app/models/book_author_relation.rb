@@ -6,4 +6,7 @@ class BookAuthorRelation < ActiveRecord::Base
   validates_presence_of :author_id
 
   validates_uniqueness_of :author_id, scope: :book_id
+
+  accepts_nested_attributes_for :author,
+                                allow_destroy: true
 end

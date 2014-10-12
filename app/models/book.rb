@@ -12,13 +12,18 @@ class Book < ActiveRecord::Base
 
   # BookAuthorRelation table specifies relations between the Book table & the Author table
   has_many :book_author_relations
-  accepts_nested_attributes_for :book_author_relations
+  accepts_nested_attributes_for :book_author_relations,
+                                allow_destroy: true
 
   has_many :authors, through: :book_author_relations
+  accepts_nested_attributes_for :authors,
+                                allow_destroy: true
 
   has_many :attachments, dependent: :destroy
-  accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :attachments,
+                                allow_destroy: true
 
-  validates :title, presence: true
-  validates :user_id, presence: true
+  validates_presence_of :title
+  validates_presence_of :user_id
+  #validates_presence_of :attachments
 end
