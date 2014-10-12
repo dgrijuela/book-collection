@@ -7,14 +7,14 @@
         <%= link_to book_path(book), class: "show-text" do %>
 					<h3><%= book.title %></h3>
           <br>
+					<b>Authors</b><br>
 					<% book.authors.each do |author| %>
-            <b>Authors</b><br>
             <%= author.name %><br>
           <% end %>
           <br>
+					<b>Attachments</b><br>
           <% book.attachments.each do |attachment| %>
-            <b>Attachments</b><br>
-            <%= attachment.file_file_name %><br>
+            <p><%= attachment.file_file_name %></p>
           <% end %>
 				</a>
         <% end %>

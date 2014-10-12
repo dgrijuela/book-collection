@@ -50,6 +50,9 @@ gem 'kaminari', '~> 0.16'
 # Paperclip for managing file uploads
 gem 'paperclip', '~> 4.2'
 
+# Cocoon for adding nested forms dinamically
+gem 'cocoon'
+
 group :development, :test do
   # RSpec for testing
   gem 'rspec-rails', '~> 3.0.0'
