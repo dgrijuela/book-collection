@@ -1,33 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Cover:</strong>
-  <%= image_tag @book.cover.url(:grid) %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @book.user_id %>
-</p>
-
-<p>
-  <strong>Authors</strong>
-  <% @authors.each_with_index do |author, index| %>
-    <%= (index + 1).to_s + '. ' + author.name %><br>
-  <% end %>
-</p>
-
-<p>
-  <strong>Attachments</strong>
-  <% @attachments.each do |attachment| %>
-    <%= link_to attachment.file_file_name, attachment.file.url %><br>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<div class="header-content">
+    <div class="text left">
+      <h2 class="light"><%= @book.title %></h2>
+      <p class="gray sm-text">by<span class="emphasis"> <%= @book.user.email[/[^@]+/] %></span>
+        <%= @book.created_at.strftime("%B %d, %Y") %></p>
+  </div>
+</div><!--end header-content-->
+<section>
+  <figure class="big-picture left">
+    <%= image_tag @book.cover.url(:show) %>
+  </figure>
+  <aside class="left">
+    <ol class="tags gray left">
+      <li class="heading bold">Authors</li>
+      <% @authors.each do |author| %>
+        <li class="tag1 light"><%= author.name %></li>
+      <% end %>
+    </ol>
+    <ol class="tags gray left">
+      <li class="heading bold">Attachments</li>
+      <% @attachments.each do |attachment| %>
+        <li class="tag1 light"><%= link_to attachment.file_file_name, attachment.file.url %></li>
+      <% end %>
+    </ol>
+    <p class="gray sm-text"><%= link_to 'Edit book', edit_book_path(@book) %></p>
+  </aside>
+</section>

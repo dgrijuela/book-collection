@@ -5,12 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body>
   <header class="main-header">
 		<div class="wrapper">
 			<div class="logo left">
-				<a href="#">Book Collection</a>
+				<%= link_to "Book Collection", root_url %>
 			</div>
 			<div class="drop-bar">
 				<i class="fa fa-bars"></i>
@@ -54,7 +57,7 @@
 		<div class="wrapper">
 			<ul>
 				<li class="heading">Book Collection</li>
-				<li><a href="https://github.com/dgrijuela/book-collection">GitHub</a></li>
+				<li><a href="https://github.com/dgrijuela/book-collection"><i class="fa fa-github"></i> GitHub</a></li>
 			</ul>
 	  </div>
 	</footer>

@@ -4,7 +4,8 @@ class Book < ActiveRecord::Base
   # Paperclip gem methods for the cover image upload
   has_attached_file :cover,
                     styles: {
-                      grid: '200x150' # Image size to use in grids (e.g. home page)
+                      grid: '200x150', # Image size to use in grids (e.g. home page)
+                      show: '500x400'
                     }
   validates_attachment :cover,
                        presence: true,
