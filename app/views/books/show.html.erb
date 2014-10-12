@@ -6,8 +6,27 @@
 </p>
 
 <p>
+  <strong>Cover:</strong>
+  <%= image_tag @book.cover.url(:grid) %>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @book.user_id %>
+</p>
+
+<p>
+  <strong>Authors</strong>
+  <% @authors.each_with_index do |author, index| %>
+    <%= (index + 1).to_s + '. ' + author.name %><br>
+  <% end %>
+</p>
+
+<p>
+  <strong>Attachments</strong>
+  <% @attachments.each do |attachment| %>
+    <%= link_to attachment.file_file_name, attachment.file.url %><br>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

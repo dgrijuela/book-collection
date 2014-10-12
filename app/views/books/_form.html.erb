@@ -20,6 +20,7 @@
     <%= f.file_field :cover %>
   </div>
   <div class="field">
+    <% @book.authors.build if @book.authors.empty? %>
     <% @book.authors.each_with_index do |author, index| %>
       <%= f.fields_for :authors do |ff| %>
         <%= ff.label :name, 'Author ' + (index + 1).to_s %><br>
@@ -28,6 +29,7 @@
     <% end %>
   </div>
   <div class="field">
+    <% @book.attachments.build if @book.attachments.empty? %>
     <% @book.attachments.each_with_index do |attachment, index| %>
       <%= f.fields_for :attachments do |ff| %>
         <%= ff.label :file, 'Attachment ' + (index + 1).to_s %><br>

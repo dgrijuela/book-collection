@@ -8,5 +8,6 @@ class BookAuthorRelation < ActiveRecord::Base
   validates_uniqueness_of :author_id, scope: :book_id
 
   accepts_nested_attributes_for :author,
+                                reject_if: :all_blank,
                                 allow_destroy: true
 end
