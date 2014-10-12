@@ -53,13 +53,9 @@ gem 'paperclip', '~> 4.2'
 group :development, :test do
   # RSpec for testing
   gem 'rspec-rails', '~> 3.0.0'
-  # Factory Girls for fixtures
-  gem 'factory_girl_rails', '~> 4.4.1'
 end
 
 group :test do
-  # Faker to generate names, emails, etc. for factories
-  gem 'faker', '~> 1.4.3'
   # Capybara to simulate users' interactions
-  gem 'capybara', '~> 2.4.3'
+  # gem 'capybara', '~> 2.4.3'
 end
