@@ -1,5 +1,6 @@
 class Attachment < ActiveRecord::Base
   belongs_to :book
+  validates :book_id, presence: true
 
   # Paperclip gem methods for the file upload
   has_attached_file :file
