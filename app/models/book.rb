@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
                        content_type: { content_type: /^image\/(jpeg|png|gif|tiff)$/ }
 
   # BookAuthorRelation table specifies relations between the Book table & the Author table
-  has_many :book_author_relations
+  has_many :book_author_relations, dependent: :destroy
   accepts_nested_attributes_for :book_author_relations,
                                 reject_if: :all_blank,
                                 allow_destroy: true

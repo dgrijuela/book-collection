@@ -11,5 +11,6 @@ class Attachment < ActiveRecord::Base
                                                       "application/epub+zip",
                                                       "application/epub",
                                                       "application/mobi",
+                                                      "application/x-mobipocket-ebook",
                                                       "application/zip"] }
 end

@@ -1,6 +1,6 @@
 <section style="padding-top: 50px">
 	<ul class="list-group">
-    <%= @books.each_with_index do |book, index| %>
+    <% @books.each_with_index do |book, index| %>
 		<li id="list-<%= index %>">
 			<figure>
         <%= link_to image_tag(book.cover.url(:grid)), book_path(book) %>
@@ -24,11 +24,10 @@
 			</div>
 		</li>
     <% end %>
+
 	<div class="button">
 		<a href="#">Siguiente <i class="fa fa-angle-right"></i></a>
 	</div>
 </section>
 </div>
 </div><!--end main content-->
-
-<%= link_to 'New Book', new_book_path %>

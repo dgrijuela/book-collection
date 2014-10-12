@@ -107,7 +107,8 @@ form i {
 }
 
 .list-group figure img {
-	width: 100%;
+	width: 150px;
+	height: 200px;
 	margin: 0 auto;
 	display: block;
 	background: transparent;
