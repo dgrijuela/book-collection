@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Library2</title>
+  <title>Book Collection</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="main-header">
+		<div class="wrapper">
+			<div class="logo left">
+				<a href="#">Book Collection</a>
+			</div>
+			<div class="drop-bar">
+				<i class="fa fa-bars"></i>
+				<a href="#">Sign in</a>
+			</div>
+			<div class="normal-menu">
+				<nav>
+					<ul>
+						<li>
+							<form class="right">
+								<i class="fa fa-search"></i>
+								<input type="search-text" type="text" placeholder="Search">
+							</form>
+						</li>
+						<li class="right"><a href="#">Sign in</a></li>
+						<li class="right"><a href="#">Sign up</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div><!--end of wrapper-->
 
-<%= yield %>
+		  <div class="dropdown-menu">
+        <ul>
+        	<li>
+        		<form>
+              <i class="fa fa-search"></i>
+              <input type="search-text" type="text" placeholder="Search">
+        		</form>
+        	</li>
+      </ul>
+    </div><!--end dropdown-menu-->
+	</header>
+  <div class="main-content">
+			<div class="wrapper">
+
+        <%= yield %>
+
+      </div>
+  </div>
+  <footer>
+		<div class="wrapper">
+			<ul>
+				<li class="heading">Book Collection</li>
+				<li><a href="https://github.com/dgrijuela/book-collection">GitHub</a></li>
+			</ul>
+	  </div>
+	</footer>
+</body>
 
 <%= debug(params) if Rails.env.development? %>
 

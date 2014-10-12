@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(function () {
+  $(".drop-bar i").on("click", function(){
+    $(".dropdown-menu").slideToggle();
+  });
+});
