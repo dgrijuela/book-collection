@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   respond_to :html, :json
 
   def index
-    @books = Book.all
+    @books = Book.order("created_at DESC")
     respond_with(@books)
   end
 

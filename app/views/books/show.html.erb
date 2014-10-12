@@ -24,6 +24,7 @@
         <li class="tag1 light"><%= link_to attachment.file_file_name, attachment.file.url %></li>
       <% end %>
     </ol>
-    <p class="gray sm-text"><%= link_to 'Edit book', edit_book_path(@book) %></p>
+    <p class="gray sm-text"><%= link_to 'Edit book', edit_book_path(@book) %> |
+     <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </aside>
 </section>

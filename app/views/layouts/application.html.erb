@@ -21,6 +21,9 @@
 			</div>
 			<div class="normal-menu">
 				<nav>
+					<ul class="left">
+						<li class="left"><b><%= link_to 'New Book', new_book_path %></b></li>
+					</ul>
 					<ul>
 						<li>
 							<form class="right">
@@ -43,6 +46,7 @@
               <input type="search-text" type="text" placeholder="Search">
         		</form>
         	</li>
+          <li><%= link_to 'New Book', new_book_path %></li>
       </ul>
     </div><!--end dropdown-menu-->
 	</header>
