@@ -19,5 +19,6 @@ class Book < ActiveRecord::Base
   has_many :attachments, dependent: :destroy
   accepts_nested_attributes_for :attachments
 
-  validates_presence_of :title
+  validates :title, presence: true
+  validates :user_id, presence: true
 end

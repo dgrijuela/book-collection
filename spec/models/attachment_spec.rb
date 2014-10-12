@@ -1,16 +1,26 @@
 require 'rails_helper'
 
 describe Attachment do
+  before(:each) do
+    @attachment = Attachment.new(book_id: 6,
+                                 file_file_name: "testattachment.pdf",
+                                 file_content_type: "application/pdf",
+                                 file_file_size: 1024)
+  end
+
   it 'is valid with a file and a book_id' do
-    expect(FactoryGirl.build(:attachment)).to be_valid
+    expect(@attachment).to be_valid
   end
   it 'is invalid without a file' do
-    expect(FactoryGirl.build(:attachment, file_file_name: '')).to be_invalid
+    @attachment.file_file_name = ''
+    expect(@attachment).to be_invalid
   end
   it 'is invalid without a book_id' do
-    expect(FactoryGirl.build(:attachment, book_id: nil)).to be_invalid
+    @attachment.book_id = nil
+    expect(@attachment).to be_invalid
   end
   it 'is invalid with a file_content_type different than [pdf, mobi, epub, zip]' do
-    expect(FactoryGirl.build(:attachment, file_content_type: 'image/png')).to be_invalid
+    @attachment.file_content_type = 'image/png'
+    expect(@attachment).to be_invalid
   end
 end
