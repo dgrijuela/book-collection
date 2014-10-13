@@ -1,0 +1,28 @@
+<% @books.each_with_index do |book, index| %>
+<li id="list-<%= index %>">
+  <figure>
+    <%= link_to image_tag(book.cover.url(:grid)), book_path(book) %>
+    <%= link_to book_path(book), class: "show-text" do %>
+      <h3><%= book.title %></h3>
+      <br>
+      <b>Authors</b><br>
+      <% book.authors.each do |author| %>
+        <p><%= author.name %></p>
+      <% end %>
+      <br>
+      <b>Attachments</b><br>
+      <% book.attachments.each do |attachment| %>
+        <p><%= attachment.file_file_name %></p>
+      <% end %>
+    </a>
+    <% end %>
+  </figure>
+  <div class="name">
+    <p>by <%= book.user.email[/[^@]+/] %></p>
+  </div>
+</li>
+<% end %>
+
+<div class="button">
+<%= paginate @books %>
+</div>

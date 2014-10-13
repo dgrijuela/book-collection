@@ -410,7 +410,7 @@ aside .tags li{
 		width: 25%;
 	}
 
-	.icons, .name {
+	.icons {
 		display: none;
 	}
 
@@ -484,10 +484,6 @@ aside .tags li{
 
 	.normal-menu li:hover a {
 		color: #444;
-	}
-
-	.list-group {
-		padding-top: 50px;
 	}
 
 	.wrapper {

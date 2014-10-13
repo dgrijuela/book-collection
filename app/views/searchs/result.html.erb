@@ -1,4 +1,17 @@
-<h1>Search results</h1>
-<% @books.each do |book| %>
-  <%= book.title %>
-<% end %>
+<% provide(:title, 'Search results for ' + @search_params) %>
+<p id="notice"><%= notice %></p>
+<div class="header-content">
+    <div class="text left">
+      <% if @books.any? %>
+        <h2 class="light">Search results for "<%= @search_params %>"</h2>
+      <% else %>
+        <h2 class="light">No results for "<%= @search_params %>"</h2>
+      <% end %>
+    </div>
+</div>
+<section>
+  <ul class="list-group">
+    <%= render '/books/grid' %>
+</section>
+</div>
+</div><!--end main content-->

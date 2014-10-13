@@ -1,5 +1,6 @@
 class SearchsController < ApplicationController
   def result
-    @books = Book.search(params[:search])
+    @search_params = params[:search]
+    @books = Book.search(@search_params)
   end
 end

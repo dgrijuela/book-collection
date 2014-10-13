@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :user
 
-  paginates_per 3
+  paginates_per 10
 
   # Paperclip gem methods for the cover image upload
   has_attached_file :cover,
@@ -33,7 +33,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :attachments
   validates_presence_of :authors
-  
+
 
   def self.to_csv
     CSV.generate do |csv|
