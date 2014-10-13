@@ -372,6 +372,28 @@ aside .tags li{
 	margin-bottom: 10px;
 }
 
+.form_input {
+	padding: 10px 50px 10px 10px;
+	margin: 20px 0;
+}
+
+.form_button {
+	padding: 10px 50px;
+	margin: 20px 0;
+	background-color: #A50000;
+	color: #FFF;
+}
+
+.links {
+	margin-bottom: 20px;
+}
+
+#notice {
+	width: 100%;
+	color: green;
+	padding-top: 20px;
+}
+
 /*********MEDIA QUERIES*******/
 
 @media all and (max-width: 990px) {
@@ -419,7 +441,7 @@ aside .tags li{
 	}
 
 	footer ul {
-		width: 32%;
+		width: 50%;
 	}
 
 	.main-header .normal-menu form {
@@ -583,6 +605,9 @@ aside .tags li{
 @media all and (min-width:560px) {
 	.drop-bar {
 		display: none;
+	}
+	footer ul {
+		width: 100%
 	}
 }
 

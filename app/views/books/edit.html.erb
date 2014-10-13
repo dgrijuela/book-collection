@@ -1,6 +1,13 @@
-<h1>Editing book</h1>
+<% provide(:title, 'Edit book') %>
+<p id="notice"><%= notice %></p>
+<div class="header-content">
+    <div class="text left">
+      <h2 class="light">Edit book</h2>
+  </div>
+</div>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>
+<br>
