@@ -53,6 +53,9 @@ gem 'paperclip', '~> 4.2'
 # Cocoon for adding nested forms dinamically
 gem 'cocoon', '~> 1.2.6'
 
+# Shareable for sharing buttons
+gem 'shareable', '~> 1.1.4'
+
 group :development, :test do
   # RSpec for testing
   gem 'rspec-rails', '~> 3.0.0'
