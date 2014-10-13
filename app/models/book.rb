@@ -33,4 +33,17 @@ class Book < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :attachments
   validates_presence_of :authors
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << ["Books"]
+      csv << ["Title", "Authors", "Formats available", "Date of creation"]
+      all.each do |book|
+        authors_names = book.authors.pluck(:name).map(&:inspect).join(', ').tr('"', '')
+        attachments_types = book.attachments.pluck(:file_content_type).map(&:inspect).join(', ').tr('"', '')
+        date = book.created_at.strftime("%d/%m, %I:%M")
+        csv << [book.title, authors_names, attachments_types, date]
+      end
+    end
+  end
 end

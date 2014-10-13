@@ -6,7 +6,11 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.order("created_at DESC").page params[:page]
-    respond_with(@books)
+    #respond_with(@books)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @books.to_csv }
+    end
   end
 
   def show
