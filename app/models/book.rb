@@ -33,6 +33,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :user_id
   validates_presence_of :attachments
   validates_presence_of :authors
+  
 
   def self.to_csv
     CSV.generate do |csv|
