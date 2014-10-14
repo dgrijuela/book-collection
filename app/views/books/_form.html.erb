@@ -23,6 +23,7 @@
   <h3>Authors</h3>
   <br>
   <div id="authors">
+    <% @book.authors.build unless @book.authors.any? %>
     <%= f.fields_for :authors do |author| %>
       <%= render 'author_fields', :f => author %>
     <% end %>
@@ -33,6 +34,7 @@
   <h3>Attachments</h3>
   <br>
   <div id="attachments">
+    <% @book.attachments.build unless @book.attachments.any? %>
     <%= f.fields_for :attachments do |attachment| %>
       <%= render 'attachment_fields', :f => attachment %>
     <% end %>

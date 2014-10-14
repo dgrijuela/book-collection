@@ -14,13 +14,13 @@
   <aside class="left">
     <ol class="tags gray left">
       <li class="heading bold">Authors</li>
-      <% @authors.each do |author| %>
+      <% @book.authors.each do |author| %>
         <li class="tag1 light"><%= author.name %></li>
       <% end %>
     </ol>
     <ol class="tags gray left">
       <li class="heading bold">Attachments</li>
-      <% @attachments.each do |attachment| %>
+      <% @book.attachments.each do |attachment| %>
         <li class="tag1 light"><%= link_to attachment.file_file_name, attachment.file.url %></li>
       <% end %>
     </ol>

@@ -1,5 +1,0 @@
-<%- headers = ['Name', 'Email'] -%>
-<%= CSV.generate_line headers %>
-<%- @books.find_each do |book| -%>
-  <%= CSV.generate_line([book.title]) %>
-<%- end -%>
