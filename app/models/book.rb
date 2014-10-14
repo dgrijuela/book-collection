@@ -39,7 +39,7 @@ class Book < ActiveRecord::Base
     CSV.generate do |csv|
       csv << ["Books"]
       csv << ["Title", "Authors", "Formats available", "Date of creation"]
-      all.each do |book|
+      all.find_each do |book|
         authors_names = book.authors.pluck(:name).map(&:inspect).join(', ').tr('"', '')
         attachments_types = book.attachments.pluck(:file_content_type).map(&:inspect).join(', ').tr('"', '')
         date = book.created_at.strftime("%d/%m, %I:%M")

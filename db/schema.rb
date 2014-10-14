@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008235448) do
+ActiveRecord::Schema.define(version: 20141014175142) do
 
   create_table "attachments", force: true do |t|
     t.integer  "book_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20141008235448) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
   end
+
+  add_index "attachments", ["book_id"], name: "index_attachments_on_book_id", using: :btree
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -36,6 +38,9 @@ ActiveRecord::Schema.define(version: 20141008235448) do
     t.datetime "updated_at"
   end
 
+  add_index "book_author_relations", ["author_id"], name: "index_book_author_relations_on_author_id", using: :btree
+  add_index "book_author_relations", ["book_id"], name: "index_book_author_relations_on_book_id", using: :btree
+
   create_table "books", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -46,6 +51,8 @@ ActiveRecord::Schema.define(version: 20141008235448) do
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
   end
+
+  add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
