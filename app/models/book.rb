@@ -48,4 +48,24 @@ class Book < ActiveRecord::Base
       end
     end
   end
+=begin
+  def self.to_csv
+    books = Book.all
+    columns = ["Title", "Authors"].to_csv
+    filename = "all_books-#{Date.today.to_s(:db)}"
+
+    self.response.headers["Content-Type"] ||= 'text/csv'
+    self.response.headers["Content-Disposition"] = "attachment; filename=#{@filename}"
+    self.response.headers["Content-Transfer-Encoding"] = "binary"
+
+    self.response_body = Enumerator.new do |y|
+      books.each_with_index do |book, i|
+        if i == 0
+          y << columns
+        end
+        y << [book.title, book.created_at].to_csv
+      end
+    end
+  end
+=end
 end

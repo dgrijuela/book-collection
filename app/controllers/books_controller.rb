@@ -8,7 +8,12 @@ class BooksController < ApplicationController
     @books = Book.order("created_at DESC").page params[:page]
     respond_to do |format|
       format.html
-      format.csv { send_data @books.to_csv }
+      #format.csv { send_data @books.to_csv, filename: 'all_books.csv' }
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"all-books\""
+        headers['Content-Type'] ||= 'text/csv'
+        send_data @books.to_csv
+      end
     end
   end
 
@@ -43,7 +48,7 @@ class BooksController < ApplicationController
   end
 
   private
-  
+
     def set_book
       @book = Book.find(params[:id])
       @authors = @book.authors

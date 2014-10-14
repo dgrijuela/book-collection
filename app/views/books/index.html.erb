@@ -4,7 +4,7 @@
 	<ul class="list-group">
 		<%= render 'grid' %>
 	<div class="button">
-		<a href="/books.csv" alt="Download all to .csv">Download all to .csv</a>
+		<%= link_to "Download all to .csv", books_path(format: :csv) %>
 	</div>
 </section>
 </div>
