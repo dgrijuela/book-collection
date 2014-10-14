@@ -2,11 +2,10 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-  respond_to :html, :json
+  respond_to :html
 
   def index
     @books = Book.order("created_at DESC").page params[:page]
-    #respond_with(@books)
     respond_to do |format|
       format.html
       format.csv { send_data @books.to_csv }
@@ -44,6 +43,7 @@ class BooksController < ApplicationController
   end
 
   private
+  
     def set_book
       @book = Book.find(params[:id])
       @authors = @book.authors

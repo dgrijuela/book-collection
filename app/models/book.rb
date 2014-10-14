@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   belongs_to :user
 
+  # Kaminari pagination (number of books per page)
   paginates_per 10
 
   # Paperclip gem methods for the cover image upload
@@ -29,10 +30,10 @@ class Book < ActiveRecord::Base
                                 reject_if: :all_blank,
                                 allow_destroy: true
 
-  validates_presence_of :title
-  validates_presence_of :user_id
-  validates_presence_of :attachments
-  validates_presence_of :authors
+  validates :title, presence: true
+  validates :user_id, presence: true
+  validates :attachments, presence: true
+  validates :authors, presence: true
 
 
   def self.to_csv
