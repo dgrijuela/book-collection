@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
   include SimpleCrud::Base
-
   model :book, includes: :authors, includes: :attachments,
         order: "created_at DESC"
 
@@ -12,6 +11,11 @@ class BooksController < ApplicationController
   - update: ^^
   - delete: undefined scope
 =end
+
+  def create
+    super
+    $client.update(@book.title)
+  end
 
   private
     def book_params
