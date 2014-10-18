@@ -122,7 +122,7 @@ module SimpleCrud
     def create_update
       hook_before_assign
       hook_before_assign_on_mode
-      @_instance.assign_attributes(params[model_name])
+      @_instance.assign_attributes(self.send("#{model_name}_params"))
       hook_after_assign
       hook_after_assign_on_mode
       hook_before_save

@@ -59,6 +59,10 @@ gem 'cocoon', '~> 1.2.6'
 # Shareable for sharing buttons
 gem 'shareable', '~> 1.1.4'
 
+gem 'twitter'
+gem 'pry'
+gem 'pry-nav'
+
 group :development, :test do
   # RSpec for testing
   gem 'rspec-rails', '~> 3.0.0'
